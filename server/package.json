@@ -22,7 +22,8 @@
     "joi": "^7.3.0",
     "jsonwebtoken": "^7.1.6",
     "kerberos": "0.0.21",
-    "mongoose": "^4.3.7"
+    "mongoose": "^4.3.7",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",

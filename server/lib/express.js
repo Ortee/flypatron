@@ -2,6 +2,7 @@ import express from 'express';
 import expressValidation from 'express-validation';
 import bodyParser from 'body-parser';
 import routes from './routes';
+import clearDatabase from './helpers/clearDB';
 
 const app = express();
 
@@ -22,5 +23,6 @@ app.use((err, req, res) => {
   }
 });
 
+clearDatabase();
 
 export default app;

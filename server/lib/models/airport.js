@@ -6,9 +6,21 @@ const AirportSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  description: {
+  id: {
     type: String,
     required: true,
+    trim: true,
+  },
+  location: {
+    type: String,
+    trim: true,
+  },
+  countryId: {
+    type: String,
+    trim: true,
+  },
+  cityId: {
+    type: String,
     trim: true,
   },
 });

@@ -1,5 +1,5 @@
 export default {
   env: 'development',
-  db: 'mongodb://localhost/flypatron',
+  db: 'mongodb://db:27017/flypatron',
   port: 3000,
 };

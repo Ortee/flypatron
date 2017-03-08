@@ -1,18 +1,21 @@
 import Airport from '../models/airport';
+import winston from 'winston';
 
 function get(req, res) {
   return res.json(req.dbAirport);
 }
 
-function create(req, res, next) {
+function create(req) {
   Airport
     .create({
-      name: req.body.name,
-      description: req.body.description,
+      name: req.body.Name,
+      id: req.body.Id,
+      location: req.body.Location,
+      countryId: req.body.CountryId,
+      cityId: req.body.CityId,
     })
-    .then((saveAirport) => {
-      return res.json(saveAirport);
-    }, (e) => {next(e);});
+    .then(() => {
+    }, (e) => {winston.log(e);});
 }
 
 function list(req, res, next) {

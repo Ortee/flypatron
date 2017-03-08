@@ -22,7 +22,8 @@
     "joi": "^7.3.0",
     "jsonwebtoken": "^7.1.6",
     "kerberos": "0.0.21",
-    "mongoose": "^4.3.7"
+    "mongoose": "^4.3.7",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
@@ -47,6 +48,7 @@
     "sinon": "^1.17.5",
     "sinon-as-promised": "^3.0.1",
     "sinon-mongoose": "^1.2.1",
+    "superagent": "^3.5.0",
     "supertest": "^1.2.0",
     "supertest-as-promised": "^2.0.2"
   }

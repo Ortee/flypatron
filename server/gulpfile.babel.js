@@ -16,7 +16,7 @@ gulp.task('babel', () => {
 
 gulp.task('nodemon', ['babel'], () =>
   plugins.nodemon({
-    script: path.join('dist', 'index.js'),
+    script: path.join('dist', 'app.js'),
     ext: 'js',
     ignore: ['node_modules/**/*.js', 'dist/**/*.js'],
     tasks: ['babel'],

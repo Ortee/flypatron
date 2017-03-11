@@ -5,8 +5,9 @@ serv1:
   volumes:
     - ./server:/app
   environment:
+    DEV: development
     PORT: 3000
-    CONNECTION_STRING_DEV: mongodb://localhost/flypatron
+    DB: mongodb://db/flypatron
   ports:
     - "3000:3000"
   links:

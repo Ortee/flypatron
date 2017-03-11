@@ -1,9 +1,11 @@
 import mongoose from 'mongoose';
-import fetchAirports from './fetchAirports';
+
 function clearDatabase() {
-  Object.keys(mongoose.connection.collections).map( collection => {
-    mongoose.connection.collections[collection].remove({}, () => {
-      fetchAirports();
+  return new Promise((resolve)=>{
+    Object.keys(mongoose.connection.collections).map( collection => {
+      mongoose.connection.collections[collection].remove({}, () => {
+        resolve();
+      });
     });
   });
 }

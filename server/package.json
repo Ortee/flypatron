@@ -1,17 +1,13 @@
 {
-  "name": "node-es6-api",
+  "name": "flypatron",
   "version": "1.0.0",
-  "description": "A node.js RESTful API built with ES6",
+  "description": "flypatron",
   "main": "index.js",
   "scripts": {
-    "build": "gulp nodemon"
+    "build": "gulp nodemon",
+    "test": "gulp test"
   },
-  "author": "Mauricio Payetta <mpayetta@gmail.com> (http://www.mauriciopayetta.com)",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mpayetta/node-es6-rest-api.git"
-  },
   "dependencies": {
     "async": "^2.0.1",
     "bcrypt": "^0.8.7",

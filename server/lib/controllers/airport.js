@@ -26,5 +26,15 @@ function list(req, res, next) {
       (e) => next(e));
 }
 
+function one(id) {
+  return new Promise((resolve) => {
+    Airport
+      .findOne({id: id})
+      .exec()
+      .then((airport) => {
+        resolve(airport);
+      });
+  });
+}
 
-export default { get, create, list };
+export default { get, create, list, one };

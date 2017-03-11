@@ -3,8 +3,8 @@ import routeController from '../controllers/route';
 
 const router = express.Router();
 
-router.route('/')
+router.route('/:from/:to/:departure/:arrival')
 
-  .post(routeController.save);
+  .get(routeController.get);
 
 export default router;

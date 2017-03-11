@@ -12,6 +12,13 @@ const RouteSchema = new mongoose.Schema({
     required: true,
     ref: 'Airport',
   },
+  departureDay: {
+    type: Date,
+    required: true,
+  },
+  arrivalDay: {
+    type: Date,
+  },
 });
 
 RouteSchema.methods.create = function(from, to) {
@@ -33,6 +40,33 @@ RouteSchema.methods.create = function(from, to) {
           .catch( err => reject(err));
       },
     ], (err, result) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(result);
+    });
+  });
+};
+
+RouteSchema.methods.findRouteByAirportsIDs = function(fromID, toID) {
+  const self = this;
+  return new Promise((resolve, reject) => {
+    async.waterfall([
+      function(callback) {
+        self.model('Airport')
+          .find({id: fromID})
+          .exec()
+          .then( fromObject => callback(null, fromObject))
+          .catch( err => reject(err));
+      },
+      function(fromObject, callback) {
+        self.model('Airport')
+          .find({id: toID})
+          .exec()
+          .then( toObject => callback(null, {fromObject, toObject}))
+          .catch( err => reject(err));
+      },
+    ], function(err, result) {
       if (err) {
         reject(err);
       }

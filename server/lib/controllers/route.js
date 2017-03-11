@@ -42,7 +42,8 @@ function get(req, res) {
 
 function save(req, res) {
   new Route()
-    .create(req.body.from, req.body.to).then((result)=>{
+    .create(req.body.from, req.body.to)
+    .then((result)=>{
       Route
         .create({
           from: result.fromResult,
